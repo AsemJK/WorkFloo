@@ -3,6 +3,10 @@
 
 // Write your JavaScript code.
 $(function () {
+    $(document).on("click", "#mobileViewMenu", function (e) {
+        e.stopPropagation();
+        CloseMobileViewMenu();
+    });
 });
 function CloseMobileViewMenu() {
     // Close the mobile view menu

@@ -28,6 +28,18 @@ The app is built using ASP.NET Core/Razor pages, JQuery, and Tailwindcss.
 - Empty state
 
 
+## Technologies
+- ASP.NET Core 8.0
+- Razor Pages
+- CQRS/Mediator
+- Entity Framework Core
+- SqlServer
+- HTML
+- JavaScript
+- JQuery
+- CSS
+- Tailwindcss
+
 ## Installation
 1. Clone the repository
 1. Open the project in Visual Studio
