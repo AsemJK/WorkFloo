@@ -10,6 +10,9 @@
 WorkFloo is a simple workflow management tool that allows users to create, update, and delete tasks. Users can also mark tasks as complete or incomplete. 
 The app is built using ASP.NET Core/Razor pages, JQuery, and Tailwindcss.
 
+### Based on the following template:
+[Sam.CleanArchitecture](https://github.com/samanazadi1996/Sam.CleanArchitecture.git)
+
 ## Features
 - Create, update, and delete tasks
 - Mark tasks as complete or incomplete

@@ -75,6 +75,11 @@ namespace WorkFloo.Infrastructure.Identity.Services
                 IsVerified = user.EmailConfirmed,
             };
 
+            await signInManager.PasswordSignInAsync(user.UserName, request.Password, false, lockoutOnFailure: false);
+            await signInManager.SignInAsync(user, false);
+
+            //await httpContextAccessor.HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, new ClaimsPrincipal(new ClaimsIdentity(new List<Claim> { new Claim(ClaimTypes.Name, user.UserName) }, IdentityConstants.ApplicationScheme)));
+
             return new BaseResult<AuthenticationResponse>(response);
         }
 
@@ -99,6 +104,7 @@ namespace WorkFloo.Infrastructure.Identity.Services
                 Roles = rolesList.ToList(),
                 IsVerified = user.EmailConfirmed,
             };
+
 
             return new BaseResult<AuthenticationResponse>(response);
         }

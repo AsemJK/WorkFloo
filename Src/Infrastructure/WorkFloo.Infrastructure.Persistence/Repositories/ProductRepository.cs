@@ -16,18 +16,15 @@ namespace WorkFloo.Infrastructure.Persistence.Repositories
         public ProductRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             products = dbContext.Set<Product>();
-
         }
 
         public async Task<PagenationResponseDto<ProductDto>> GetPagedListAsync(int pageNumber, int pageSize, string name)
         {
             var query = products.OrderBy(p => p.Created).AsQueryable();
-
             if (!string.IsNullOrEmpty(name))
             {
                 query = query.Where(p => p.Name.Contains(name));
             }
-
             return await Paged(
                 query.Select(p => new ProductDto(p)),
                 pageNumber,

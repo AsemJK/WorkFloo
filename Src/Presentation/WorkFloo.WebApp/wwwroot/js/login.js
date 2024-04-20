@@ -32,9 +32,12 @@ function Login() {
                     icon: 'success',
                     title: 'Login Successful, Redirection ....',
                     showConfirmButton: false,
-                    timer: 1500
-                });
-                window.location.href = "/";
+                    timer: 1000
+                }).then(
+                    () => {
+                        window.location.href = "/";
+                    }
+                );
             } else {
                 var errors = response.errors.map(message => message.description);
                 Swal.fire({
@@ -54,9 +57,8 @@ function Login() {
                     icon: 'error',
                     title: 'Oops...',
                     text: `${errors}`,
-                    footer: '<a href>Why do I have this issue?</a>',
                     showConfirmButton: false,
-                    timer: 5500
+                    timer: 2500
                 });
 
         }
